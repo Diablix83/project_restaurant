@@ -6,16 +6,16 @@
 			return $this->db->query('SELECT * FROM meals_types')->fetchAll();
 		}
 
+
+		//ATTENTION !!! le contenu de $type dois être une chaine de caractère en minuscule (les "name" de chaque type sont en minuscule)
 		public function allByTypes($type){
-			$request = $this->db->prepare("SELECT *
+			$request = $this->db->prepare("SELECT meals.*, meals_types.name
 					FROM $this->table
-					INNER JOIN 
-					WHERE");
+					INNER JOIN meals_types ON meals_types.id = meals.meal_type
+					WHERE meals_types.name = :type");
+			$request->execute([ ":type" => $type ]);
 
-			if(!empty($where)){	$sql .= " WHERE $where"; }
-			if(!empty($order)){	$sql .= " ORDER BY $order"; }
-
-			return $this->db->query($sql)->fetchAll();
+			return $request->fetchAll();
 		}
 	}
 ?>

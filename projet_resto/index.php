@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	require_once('configuration.php');
 
 	$controller_type = 'ClientController';

@@ -1,5 +1,6 @@
 <?php
 	class ClientController extends Controller {
+		protected $modelName = 'RegistredCustomersModel';
 
 		public function accueil(){
 			require_once('views/client/accueil.php');
@@ -22,7 +23,7 @@
 			foreach ($_POST as $key => $value) {
 				if(empty($value)) $missingField = true;
 			}
-			var_dump($missingField);
+
 			if(!$missingField){
 				$firstName = $_POST['clientFirstName'];
 				$lastName = $_POST['clientLastName'];
