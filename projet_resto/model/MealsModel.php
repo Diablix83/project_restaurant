@@ -17,5 +17,21 @@
 
 			return $request->fetchAll();
 		}
+
+		public function addType($typeName){
+			$request = $this->db->prepare('INSERT INTO meals_types SET name = :name');
+			$request->execute([ ":name" => $typeName]);
+		}
+
+		public function modifyType($typeName, $typeId){
+			$request = $this->db->prepare('UPDATE meals_types SET name = :name WHERE id = :id');
+			$request->execute([ ":name" => $typeName, ":id" => $typeId ]);
+		}
+
+		public function deleteType($typeId){
+			$request = $this->db->prepare('DELETE FROM meals_types WHERE id = :id');
+			$request->execute([ ":id" => $typeId]);
+		}
+
 	}
 ?>

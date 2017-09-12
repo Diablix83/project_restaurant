@@ -9,7 +9,7 @@
 	require_once('model/MealsModel.php');
 	require_once('model/RegistredCustomersModel.php');
 	require_once('model/NotRegistredCustomersModel.php');
-	require_once('model/ReservationsModel.php');
 	require_once('model/AdminsModel.php');
+	require_once('model/ReservationsModel.php');
 
 ?>

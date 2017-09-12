@@ -1,5 +1,7 @@
 <article class="flex flexColumn spaceBetween" data-product-id="<?= $meal['id'] ?>" data-sale-price="<?= $meal['salePrice'] ?>" data-quantity-in-stock="<?= $meal['quantityInStock'] ?>">
-	<img src="img/meals/<?= $meal['photo'] ?>" alt="<?= $meal['name'] ?>">
+	<div class="imgContainer">
+		<img src="img/meals/<?= $meal['photo'] ?>" alt="<?= $meal['name'] ?>">
+	</div>
 	<div>
 		<h4><?= $meal['name'] ?></h4>
 		<span class="prixUnitaire"><?= $meal['salePrice'] ?> €</span>

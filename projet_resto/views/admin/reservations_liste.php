@@ -9,6 +9,7 @@
 					<th>Email</th>
 					<th>Nombre de personne</th>
 					<th>Date et Heure</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -18,6 +19,7 @@
 						<td><?= $reservation['email'] ?></td>
 						<td><?= $reservation['nb_personnes'] ?></td>
 						<td><?= $reservation['date_wished'] ?></td>
+						<td><a href="index.php?controller=admins&task=deleteReservation&id=<?= $reservation['id'] ?>">Supprimer</a></td>
 					</tr>
 				<?php endforeach ?>
 			</tbody>
